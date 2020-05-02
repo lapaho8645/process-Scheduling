@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import com.pro.Process;
 public abstract class Scheduling {
 	int processorNum;
-
+	
 	public Scheduling(int processorNum) {
 		this.processorNum = processorNum;
 	}
@@ -26,9 +26,10 @@ public abstract class Scheduling {
 		return true;
 	}
 	// 프로세스 전체 큐에서 시간에 따라 프로세스 대기큐로 프로세스를 이동시킵니다. 매 시간단위마다 호출됩니다.
+	
 	public void setWaitQ(int time) {
 		for (int i = 0; i < pcs.size(); i++)
-			if (pcs.get(i).getArrTime() == time)
+			if (pcs.get(i).getArrTime() == time) 
 				waitQ.add(pcs.get(i));
 	}
 	// 모든 스케줄링 클래스는 이 함수를 상속받아 구현합니다.
